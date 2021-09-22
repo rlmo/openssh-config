@@ -3,9 +3,6 @@ set -eu ;
 
 SSH_DIR="/Users/$(whoami)/.ssh";
 CONFIG_FILE="$SSH_DIR/config";
-PRORADIS_HOSTS="$SSH_DIR/proradis_hosts";
-UBUNTU_HOSTS="$SSH_DIR/ubuntu_hosts";
-TELE_HOSTS="$SSH_DIR/tele_hosts";
 KEYS_DIR="$SSH_DIR/keys";
 NEW_HOST_DIR="";
 
@@ -17,9 +14,9 @@ help_info() {
 	echo;
 	echo "--domain=(required)";
 	echo "	Domain name of the desired host to be added";
-	echo "--type=(default: p)";
-	echo "	Type of host to be added: p(proradis), u(ubuntu) or t(tele)";
-	echo "--port=(default: 4333)";
+	echo "--user=(default: ubuntu)";
+	echo "	Username of remote machine";
+	echo "--port=(default: 22)";
 	echo "	Port of service";
 	echo "--key=(optional)";
 	echo "	Identity file stored in $KEYS_DIR";
